@@ -16,6 +16,11 @@ docker push {AWS account ID}.dkr.ecr.{us-east-1}.amazonaws.com/{hello-world:late
 ### Create the Lambda function including modify the timeout and maxium memory limitation.
 aws lambda create-function --function-name {hello-world} --package-type Image --code ImageUri={AWS account ID}.dkr.ecr.{us-east-1}.amazonaws.com/{hello-world:latest} --role arn:aws:iam::{AWS account ID}:role/{lambda-ex} --timeout {100} --memory-size {3008}
 
+#### update the existed function configuration etc., timeout->100
+aws lambda update-function-configuration --function-name {hello-world} --timeout {100}
+#### update the existed function code etc., modified docker image
+aws lambda update-function-code --function-name {hello-world} --image-uri {AWS account ID}.dkr.ecr.{us-east-1}.amazonaws.com/{hello-world:latest}
+
 
 ## Test the image locally 
 
