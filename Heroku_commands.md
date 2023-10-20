@@ -34,3 +34,6 @@ Push the main branch of the current repo to the heroku remote
 ## heroku ps
 
 Check how many dynos(container) are running.
+
+## heroku open
+查找你當前目錄關聯的 Heroku 應用程序的 URL並打開
