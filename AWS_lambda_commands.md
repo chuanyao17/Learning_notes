@@ -25,9 +25,11 @@ aws lambda update-function-code --function-name {hello-world} --image-uri {AWS a
 ## Test the image locally 
 
 1. Using an AWS base image for Python
+
 docker run -p 9000:8080 {my_lambda_function:latest}
 
 2. Using an alternative base image with the runtime interface client
+
 docker run -d -v C:\Users\Yao\.aws-lambda-rie:/aws-lambda -p 9000:8080 --entrypoint /aws-lambda/aws-lambda-rie {my_lambda_function:latest} /usr/local/bin/python -m awslambdaric lambda_function.handler
 
 ### This command invokes the function with an empty event and returns a response.(using PowerShell)
