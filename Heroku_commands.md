@@ -10,17 +10,31 @@ pom.xml 是 Maven 中的核心檔案，其中 "pom" 代表 "Project Object Model
 
 在 Procfile 中，你可以定義多種不同的進程類型，但最常見的進程類型是 web。這告訴 Heroku 如何啟動你的 web 伺服器。
 
+web: gunicorn gettingstarted.wsgi
+
+web: 這指示 Heroku 這個命令應該在一個 web dyno 上運行。gunicorn: 這是一個流行的 Python WSGI HTTP 服務器，用來運行 Python web 應用程序。
+
+這行設定告訴 Heroku 使用 Gunicorn 在 web dyno 上運行在 gettingstarted.wsgi 文件中定義的 Python WSGI 應用程序。
+
 java -jar target/java-getting-started-1.0.0-SNAPSHOT.jar：這是啟動應用程序的命令。它告訴 Heroku 使用 Java 執行 JAR 檔（Java Archive）來啟動應用程序。在這種情況下，應用程序已被打包成名為 java-getting-started-1.0.0-SNAPSHOT.jar 的 JAR 檔，並存放在 target 目錄下。
 
 ## ./mvnw clean install 
 
 是一個用於 Maven 專案的命令，它使用 Maven Wrapper 執行 Maven 的兩個生命週期階段：clean 和 install，當執行 ./mvnw clean install 命令時，Maven 根據你專案中的 pom.xml 文件去安裝依賴並進行建構(compile app的意思)。
 
+## python -m venv --upgrade-deps .venv
+
+Create a virtual environment inside the example app directory
+
+## .\.venv\Scripts\activate
+
+Activate the virtual environment if you’re on a Microsoft Windows system，typing 'deactivate' to end the virtual environment. 
+
 # Commands
 
 ## heroku create
 
-When you create an app, a git remote called heroku is also created and associated with your local git repository.
+When you create an app, a git remote called heroku is also created and associated with your local git repository(or fo git init for you to create a local git repo).
 
 ## heroku addons:create heroku-postgresql:mini
 
@@ -63,7 +77,7 @@ heroku logs can check the latest log, with --tail, it will check the log lively 
 
 查詢 Heroku 應用的環境變量。這些環境變量通常用於存儲應用程序設定、秘密或任何其他配置資料
 
-heroku config:set ENERGY="20 GeV" 可以直接添加var
+heroku config:set ENERGY="20 GeV" 可以直接添加ENERGY這個變數在heroku平台上當前的app
 
 ## heroku pg
 
@@ -86,6 +100,16 @@ heroku local examines your Procfile to determine what command to run.
 Heroku will spin up a temporary one-off dyno, execute the java -version command inside that dyno, display the output (Java version information) back to you, and then shut down the one-off dyno.
 
 One-off dynos 在 Heroku 平台上是一種特殊類型的 dyno，用於執行短暫或一次性的任務，而不是長時間運行的 web 或 worker 服務。
+
+## heroku run python manage.py shell
+
+The Python shell runs in the context of your app and all its dependencies.
+
+To exit the Python shell, run the command exit().
+
+## heroku run bash
+
+Heroku 會創建一個一次性的 dyno，並在這個 dyno 上啟動一個 Bash shell，讓你能夠直接在運行你應用的遠程環境中執行命令。
 
 ## echo $?
 
