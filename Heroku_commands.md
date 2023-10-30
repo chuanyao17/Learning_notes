@@ -34,7 +34,7 @@ Activate the virtual environment if you’re on a Microsoft Windows system，typ
 
 ## heroku create
 
-When you create an app, a git remote called heroku is also created and associated with your local git repository(or fo git init for you to create a local git repo).
+When you create an app, a git remote called heroku is also created and associated with your local git repository.
 
 ## heroku addons:create heroku-postgresql:mini
 
