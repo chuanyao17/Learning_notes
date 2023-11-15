@@ -9,6 +9,10 @@ git push 推上，遠程MASTER
 code . 開啟編輯  
 git checkout -b yaoDev 開新branch至地方  
 git push -u origin yaoDev 推上線branch  
+git branch -d <branch-name> 刪除地方branch  
+git push origin --delete <branch-name> 刪除遠端branch  
+
+
 
 新增pull request 在git上branch的地方有compare & pull request  
 merge pull requst 用來合併branch到master  
