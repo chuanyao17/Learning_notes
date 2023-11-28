@@ -9,6 +9,10 @@ git push 推上，遠程MASTER
 code . 開啟編輯  
 git checkout -b yaoDev 開新branch至地方  
 git push -u origin yaoDev 推上線branch  
+git branch -d <branch-name> 刪除地方branch  
+git push origin --delete <branch-name> 刪除遠端branch  
+
+
 
 新增pull request 在git上branch的地方有compare & pull request  
 merge pull requst 用來合併branch到master  
@@ -21,6 +25,11 @@ git checkout (完整檔名) 可以回復成未modified狀態
 
 git log看commit紀錄  
 git reset 版本當前的識別碼(前七碼)^ 回到上一個commit  
-^ 的意思是回到 前一次
-git reset 57989a6^^^^^^  =  57989a6~6  
-git reset 版本識別碼  
+^ 的意思是回到 前一次  
+git reset 57989a6^^^^^^  =  57989a6~6   
+git reset 版本識別碼 (前7碼)    
+git reset --soft HEAD\~1 如果您想保留所做的更改但不在提交中，可以使用 --soft 選項。如果您想完全丟棄更改，則使用 --hard 選項  
+git reset --hard HEAD\~1  
+git push origin HEAD --force 使用 git push 命令配合 --force 選項推送本地狀態到遠端，這將覆蓋遠端的歷史。
+
+
