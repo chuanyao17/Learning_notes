@@ -89,11 +89,11 @@ Connect to the remote database and see all the rows, and able to do the query.
 
 ## heroku open /database
 
-heroku open /database，CLI 將試圖打開瀏覽器至 https://your-app-name.herokuapp.com/database。除非你的應用程序實際上在這個路徑下提供內容，否則這可能不是你想要的結果。
+heroku open /database，CLI 將試圖打開瀏覽器至 `https://your-app-name.herokuapp.com/database`。除非你的應用程序實際上在這個路徑下提供內容，否則這可能不是你想要的結果。
 
 ## heroku local --port 5001
 
-heroku local examines your Procfile to determine what command to run.
+Run the App Locally, heroku local examines your Procfile to determine what command to run.
 
 ## heroku run java -version
 
