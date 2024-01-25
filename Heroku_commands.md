@@ -26,7 +26,7 @@ java -jar target/java-getting-started-1.0.0-SNAPSHOT.jar：這是啟動應用程
 
 Create a virtual environment inside the example app directory
 
-## .\\.venv\\Scripts\\activate
+## .venv\Scripts\Activate  
 
 Activate the virtual environment if you’re on a Microsoft Windows system，typing 'deactivate' to end the virtual environment. 
 
