@@ -48,3 +48,7 @@ import CommonLayout from './path/to/CommonLayout';
 **小結**
 命名導出 用於導出多個變量或函數，導入時使用花括號。  
 默認導出 用於導出單個主要變量或函數，導入時可以使用任意名稱且不需要花括號。  
+
+## Navigation components
+**Link 組件：** 生成一個實際的超連結（HTML <a> 標籤），用戶點擊連結後進行導航，適用於聲明式導航，例如：<Link to="/path">Link Text</Link>  
+**Navigate 組件：** 不生成任何可見的 HTML 元素，立即重定向用戶到指定路徑，適用於需要自動重定向的場景，例如：<Navigate to="/path" replace />   
