@@ -54,3 +54,27 @@ import CommonLayout from './path/to/CommonLayout';
 例如：`<Link to="/path">Link Text</Link>`  
 **Navigate 組件：** 不生成任何可見的 HTML 元素，立即重定向用戶到指定路徑，適用於需要自動重定向的場景  
 例如：`<Navigate to="/path" replace />`   
+
+**Outlet 組件**用於渲染其父路由的嵌套路由，作為佔位符，在匹配子路由時渲染共用的內容
+例如：  
+ ```
+<Router>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Route>
+          <Route path="/" element={<Home />} />
+        </Routes>
+</Router>
+
+export const Layout = () => {
+    return (
+        <>
+            <Header />
+            <Outlet />
+            <Footer />
+        </>
+    );
+}
+```
