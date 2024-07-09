@@ -4,7 +4,7 @@ git reset HEAD 檔案名稱.副檔名 取消add
 git add . 再輸入 git reset --hard 回復最後一次commit  
 git commit -m "first commit" 每次新增完填寫描述  
 git remote add origin https://github.com/CSCI-40500-77100-Spring-2021/project-3 連結線上  
-git push -u origin master  第一次推上線MASTER   
+git push -u origin master  第一次推上線MASTER   or git push -u origin HEAD
 git push 推上，遠程MASTER  
 code . 開啟編輯  
 git checkout -b yaoDev 開新branch至地方  
